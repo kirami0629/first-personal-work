@@ -18,7 +18,7 @@ headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit
 ### 准备工作
 comment = []
 comments= []
-data='1613888044820'
+data='1613891192468'
 cursor='0'
 
 # ### 2. 使用正则表示式提取评论
@@ -34,7 +34,10 @@ for i in range(0,1268):
     
 # ### 3. 将提取评论保存
 f = open("comments.json","w",encoding='utf-8')
-f.write(str(comments))
+for list1 in comments:
+        for comment in list1:
+            f.write(comment)
+            f.write('\n')
 f.close()
 #print(comments)
 
