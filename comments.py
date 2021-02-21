@@ -18,7 +18,7 @@ headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit
 ### 准备工作
 comment = []
 comments= []
-data='1613672133105'
+data='1613888044820'
 cursor='0'
 
 # ### 2. 使用正则表示式提取评论
