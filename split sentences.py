@@ -49,5 +49,5 @@ data = {}
 data['data'] = List
 
 f = open("split.json","w",encoding='utf-8')
-f.write(str(items))
+json.dump(data, f, ensure_ascii=False, indent=4)
 f.close() 
