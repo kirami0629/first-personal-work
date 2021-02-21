@@ -46,7 +46,7 @@ for i in range(len(items)):
         
 #用json保存分词成果   
 data = {}
-data['data'] = List
+data['value'] = List
 
 f = open("split.json","w",encoding='utf-8')
 f.write(str(items))
