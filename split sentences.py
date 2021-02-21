@@ -6,6 +6,7 @@ Created on Fri Feb 19 12:08:46 2021
 """
 
 import jieba
+import json
 
 comments= open("comments.json", "r", encoding='utf-8').read()
     
@@ -31,12 +32,22 @@ items.sort(key=lambda x: x[1], reverse=True)
 
 #print(items)
 
-#对代码进行输出测试
-#for i in range(14):
-#    word, count = items[i]
-#    print("{0:<5}{1:>5}".format(word, count))
+#对代码进行输出格式调整
 
-#保存下分词成果    
-f = open("split.txt","w",encoding='utf-8')
+List = []
+for i in range(len(items)):
+    Dict = {}
+    word, count = items[i]
+    if count >= 10:
+        Dict['name'] = word
+        Dict['value'] = count
+        List.append(Dict)
+# print(List)
+        
+#用json保存分词成果   
+data = {}
+data['data'] = List
+
+f = open("split.json","w",encoding='utf-8')
 f.write(str(items))
 f.close() 
